@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    padding: 20px;
+}
+
+.control-panel {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.section {
+    background: #222;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+}
