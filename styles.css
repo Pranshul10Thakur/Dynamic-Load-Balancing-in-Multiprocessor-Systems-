@@ -1,24 +1,40 @@
+/* Basic styling for Commit 4 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: white;
-    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#0f172a 0%, #071029 100%);
+    color: #fff;
+    padding: 24px;
 }
 
-.control-panel {
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
-}
+.container { max-width: 1100px; margin: 0 auto; }
 
-.section {
-    background: #222;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-}
+.header-with-logo { display:flex; justify-content:center; align-items:center; margin-bottom:12px; }
+h1 { font-size: 2rem; color: #dbeafe; }
 
-button {
-    padding: 10px 20px;
-    margin-right: 10px;
-}
+.subtitle { text-align:center; color: #9ca3af; margin-bottom:18px; }
+
+.control-panel { background: #0b1220; padding: 14px; border-radius: 10px; margin-bottom: 20px; }
+.controls-row { display:flex; gap:12px; align-items:center; }
+.btn-group { display:flex; gap:8px; }
+button { padding:8px 14px; border-radius:8px; border:none; cursor:pointer; font-weight:600; background:#1f2937; color:#fff; }
+.btn-start { background:#10b981; }
+.btn-reset { background:#374151; }
+.btn-add { background:#3b82f6; }
+
+.algorithm-selector { margin-left: 10px; }
+select { padding:8px 10px; background:#111827; color:#fff; border-radius:6px; border:1px solid #263247; }
+
+.time-display { margin-left:auto; background:#0f1724; padding:8px 12px; border-radius:6px; font-family: monospace; }
+
+.section { background:#07122a; padding:18px; border-radius:10px; margin-bottom: 18px; }
+.section-title { margin-bottom:12px; color:#c7d2fe; }
+
+.processors-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; }
+.processor-card { background:#0f1724; padding:16px; border-radius:10px; text-align:center; }
+.processor-title { font-weight:700; margin-bottom:8px; color:#e2e8f0; }
+
+table { width:100%; border-collapse:collapse; margin-top:8px; }
+th, td { padding:10px 8px; border-bottom:1px solid #0b1220; text-align:left; color:#e6eef8; }
+th { font-weight:700; }
