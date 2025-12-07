@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dynamic Load Balancer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Load Balancing Simulator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h1>Dynamic Load Balancing Simulator</h1>
-    <p class="subtitle">Processor layout added</p>
+<div class="container">
+    <div class="header-with-logo">
+        <h1>Dynamic Load Balancing Simulator</h1>
+    </div>
+    <p class="subtitle">Multiprocessor Systems — Real-time Visualization</p>
 
     <div class="control-panel">
-        <button id="startBtn">Start</button>
-        <button id="pauseBtn">Pause</button>
-        <button id="resetBtn">Reset</button>
-    </div>
+        <div class="controls-row">
+            <div class="btn-group">
+                <button id="startPauseBtn" class="btn-start">Start</button>
+                <button id="resetBtn" class="btn-reset">Reset</button>
+                <button id="addProcessBtn" class="btn-add">Add Process</button>
+            </div>
 
-    <div class="section">
-        <h2>Processors</h2>
-        <div class="processors-grid">
-            <div class="processor-card">
-                <h3>Processor 1</h3>
-                <p id="p1-load">Load: 0%</p>
+            <div class="algorithm-selector">
+                <label>Algorithm:</label>
+                <select id="algorithmSelect">
+                    <option value="static">Static (Round Robin)</option>
+                    <option value="dynamic" selected>Dynamic (Min Load)</option>
+                    <option value="adaptive">Adaptive (Smart)</option>
+                </select>
             </div>
-            <div class="processor-card">
-                <h3>Processor 2</h3>
-                <p id="p2-load">Load: 0%</p>
-            </div>
-            <div class="processor-card">
-                <h3>Processor 3</h3>
-                <p id="p3-load">Load: 0%</p>
+
+            <div class="time-display">
+                Time: <span id="timeDisplay">0</span>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="section">
+        <h2 class="section-title">Processor Load Distribution</h2>
+        <div class="processors-grid" id="processorsGrid"></div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Active Processes</h2>
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Arrival</th>
+                        <th>Burst</th>
+                        <th>Remaining</th>
+                        <th>Processor</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+                <tbody id="processTable"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
