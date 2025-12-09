@@ -37,7 +37,17 @@ h1 {
 
 .btn-group { display: flex; gap: 10px; }
 
-button { padding: 10px 20px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
 button:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.25); }
 
@@ -51,9 +61,21 @@ button:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2
 
 select { padding: 10px 15px; background: #374151; color: white; border: 1px solid #4b5563; border-radius: 8px; cursor: pointer; font-size: 14px; }
 
-.time-display { font-size: 1.2rem; font-family: 'Courier New', monospace; background: #374151; padding: 10px 20px; border-radius: 8px; }
+.time-display {
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+    background: #374151;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
 
-.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+/* METRICS */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
 
 .metric-label { color: #9ca3af; font-size: 0.875rem; margin-bottom: 5px; }
 
@@ -66,53 +88,146 @@ select { padding: 10px 15px; background: #374151; color: white; border: 1px soli
 
 .section-title { font-size: 1.5rem; margin-bottom: 20px; }
 
-.graph-container { background: #374151; border-radius: 8px; padding: 20px; min-height: 300px; position: relative; }
+/* GRAPH */
+.graph-container {
+    background: #374151;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 300px;
+    position: relative;
+}
 
-#performanceChart { width: 100% !important; height: 280px !important; }
+#performanceChart {
+    width: 100% !important;
+    height: 280px !important;
+}
 
-.processors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; padding: 10px; }
+/* PROCESSOR CARDS */
+.processors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 10px;
+}
 
-.processor-card { background: #374151; border-radius: 12px; padding: 25px 20px; display: flex; flex-direction: column; align-items: center; }
+.processor-card {
+    background: #374151;
+    border-radius: 12px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.processor-title { text-align: center; font-weight: 600; margin-bottom: 20px; font-size: 1.1rem; }
+.processor-title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
 
-.circular-progress { position: relative; width: 160px; height: 160px; display: flex; align-items: center; justify-content: center; }
+/* 🔥 RESTORED CIRCULAR PROGRESS CSS (THIS WAS MISSING) */
+.circular-progress {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-.circular-progress svg { position: absolute; width: 100%; height: 100%; transform: rotate(-90deg); filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3)); }
+.circular-progress svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
+}
 
-.circular-progress circle { fill: none; stroke-width: 12; stroke-linecap: round; }
+.circular-progress circle {
+    fill: none;
+    stroke-width: 12;
+    stroke-linecap: round;
+}
 
 .circle-bg { stroke: #4b5563; }
 
-.circle-progress { stroke-dasharray: 440; stroke-dashoffset: 440; transition: stroke-dashoffset 0.35s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+.circle-progress {
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    transition: stroke-dashoffset 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                stroke 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.circle-progress.green { stroke: #10b981; filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.4)); }
-.circle-progress.yellow { stroke: #fbbf24; filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.4)); }
-.circle-progress.red { stroke: #ef4444; filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.4)); }
+.circle-progress.green {
+    stroke: #10b981;
+    filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.4));
+}
 
-.progress-text { position: absolute; font-size: 1.5rem; font-weight: bold; color: white; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.circle-progress.yellow {
+    stroke: #fbbf24;
+    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.4));
+}
 
-.processor-stats { margin-top: 20px; text-align: center; font-size: 0.875rem; width: 100%; }
+.circle-progress.red {
+    stroke: #ef4444;
+    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.4));
+}
 
-.processor-stats div { color: #9ca3af; margin-bottom: 5px; padding: 3px 0; transition: color 0.3s ease; }
+.progress-text {
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.stat-highlight { color: white !important; font-weight: 600; transition: all 0.3s ease; }
+/* PROCESSOR STATS */
+.processor-stats {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.875rem;
+    width: 100%;
+}
 
+.processor-stats div {
+    color: #9ca3af;
+    margin-bottom: 5px;
+    padding: 3px 0;
+    transition: color 0.3s ease;
+}
+
+.stat-highlight {
+    color: white !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* TABLE */
 table { width: 100%; border-collapse: collapse; }
 
 thead { background: #374151; }
 
-th, td { padding: 12px; text-align: left; border-bottom: 1px solid #4b5563; }
-
-th { font-weight: 600; }
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #4b5563;
+}
 
 tbody tr:hover { background: #374151; }
 
-.state-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+.state-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
 
 .state-running { background: #10b981; color: #042007; }
 .state-ready { background: #fbbf24; color: #422800; }
 .state-new { background: #4b5563; color: white; }
+
 
 @media (max-width: 768px) {
     h1 { font-size: 1.75rem; }
