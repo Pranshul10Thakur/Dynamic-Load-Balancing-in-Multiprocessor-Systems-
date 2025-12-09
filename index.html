@@ -3,41 +3,50 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Dynamic Load Balancing Simulator</title>
+    <title>⚖️ Dynamic Load Balancing Simulator</title>
     
     <link rel="icon" type="image/png" href="Gemini_Generated_Image_qv57qkqv57qkqv57.png">
-    
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
+
         <!-- Header -->
         <div class="header-with-logo">
             <img src="Gemini_Generated_Image_qv57qkqv57qkqv57.png" alt="Logo" class="site-logo">
-            <h1>Dynamic Load Balancing Simulator</h1>
+            <h1>⚙️ Dynamic Load Balancing Simulator</h1>
         </div>
-        <p class="subtitle">Multiprocessor Systems — Real-time Visualization</p>
+
+        <p class="subtitle">📊 Multiprocessor Systems — Real-time Visualization</p>
+
 
         <!-- Control Panel -->
         <div class="control-panel">
             <div class="controls-row">
+                
                 <div class="btn-group">
+
                     <button id="startPauseBtn" class="btn-start" onclick="toggleSimulation()">
                         <span>▶</span> Start
                     </button>
+
                     <button class="btn-reset" onclick="resetSimulation()">
-                        <span>↻</span> Reset
+                        <span>🔄</span> Reset
                     </button>
+
                     <button class="btn-add" onclick="addProcess()">
-                        <span>+</span> Add Process
+                        <span>➕</span> Add Process
                     </button>
+
                     <button class="btn-download" onclick="downloadReport()">
-                        <span>⬇</span> Download
+                        <span>📥</span> Download
                     </button>
+
                 </div>
 
                 <div class="algorithm-selector">
-                    <span style="color:#9ca3af;">Algorithm:</span>
+                    <span style="color:#9ca3af;">⚡ Algorithm:</span>
                     <select id="algorithmSelect" onchange="changeAlgorithm()">
                         <option value="static">Static (Round Robin)</option>
                         <option value="dynamic" selected>Dynamic (Min Load)</option>
@@ -46,64 +55,77 @@
                 </div>
 
                 <div class="time-display">
-                    Time: <span id="timeDisplay">0</span>
+                    ⏱️ Time: <span id="timeDisplay">0</span>
                 </div>
+
             </div>
         </div>
 
-        <!--Dashboard-->
+
+        <!-- Dashboard -->
         <div class="metrics-grid">
+
             <div class="metric-card">
-                <div class="metric-label">Avg Load</div>
+                <div class="metric-label">📈 Avg Load</div>
                 <div class="metric-value blue" id="avgLoad">0.00</div>
             </div>
+
             <div class="metric-card">
-                <div class="metric-label">Load Std Dev</div>
+                <div class="metric-label">📉 Load Std Dev</div>
                 <div class="metric-value purple" id="variance">0.00</div>
             </div>
+
             <div class="metric-card">
-                <div class="metric-label">Migrations</div>
+                <div class="metric-label">🔀 Migrations</div>
                 <div class="metric-value green" id="migrations">0</div>
             </div>
+
             <div class="metric-card">
-                <div class="metric-label">Completed</div>
+                <div class="metric-label">✔️ Completed</div>
                 <div class="metric-value yellow" id="completed">0</div>
             </div>
+
         </div>
 
-        <!--Graph-->
+
+        <!-- Graph -->
         <div class="section">
-            <h2 class="section-title">Performance Metrics Over Time</h2>
+            <h2 class="section-title">📉 Performance Metrics Over Time</h2>
             <div class="graph-container">
                 <canvas id="performanceChart"></canvas>
             </div>
         </div>
 
-        <!--Visualizer-->
+
+        <!-- Processor Visualizer -->
         <div class="section">
-            <h2 class="section-title">Processor Load Distribution</h2>
+            <h2 class="section-title">🖥️ Processor Load Distribution</h2>
             <div class="processors-grid" id="processorsGrid"></div>
         </div>
 
-        <!--Table-->
+
+        <!-- Table -->
         <div class="section">
-            <h2 class="section-title">Active Processes</h2>
+            <h2 class="section-title">📋 Active Processes</h2>
+
             <div style="overflow-x:auto;">
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Arrival</th>
-                            <th>Burst</th>
-                            <th>Remaining</th>
-                            <th>Processor</th>
-                            <th>State</th>
+                            <th>🆔 ID</th>
+                            <th>⏳ Arrival</th>
+                            <th>🔥 Burst</th>
+                            <th>⚡ Remaining</th>
+                            <th>🖥️ Processor</th>
+                            <th>📌 State</th>
                         </tr>
                     </thead>
                     <tbody id="processTable"></tbody>
                 </table>
             </div>
+
         </div>
+
     </div>
 
     <script src="script.js"></script>
